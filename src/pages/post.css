@@ -1,0 +1,48 @@
+.post {
+  padding: 1.5rem 2.5rem;
+}
+.post-header {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  width: 70%;
+  margin: 2rem auto;
+}
+.form-label {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.form input {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  width: 80%;
+}
+.form textarea {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  width: 80%;
+}
+.form input[type="date"] {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
+  width: 30%;
+}
+.form button {
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 2rem;
+  border: none;
+  background-color: #000;
+  color: #ffff;
+  width: 80%;
+}

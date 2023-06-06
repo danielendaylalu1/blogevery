@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.navbar h2 {
+  margin-right: auto;
+}
+.navlink a {
+  color: #0c0c0c;
+  text-decoration: none;
+}
