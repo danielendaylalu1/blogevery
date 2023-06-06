@@ -1,3 +1,3 @@
-# Simple react blog post website
+#Simple react blog post website
 
-# blog post using react-router
+#blog post using react-router
