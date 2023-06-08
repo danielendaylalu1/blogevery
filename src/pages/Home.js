@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 export default function Home(props) {
-  const blogs = useLoaderData();
-  const [filterdBlogs, setFilterdBlogs] = useState(blogs);
+  const [filterdBlogs, setFilterdBlogs] = useState(props.blogs);
+  useEffect(() => {
+    setFilterdBlogs(props.blogs);
+  }, [props.blogs]);
   const filterHandler = (toShow) => {
-    setFilterdBlogs(blogs);
-    const newBlog = blogs.filter((blog) => {
-      if (toShow === "All") {
-        return blog;
+    setFilterdBlogs(props.blogs);
+    const newBlog = props.blogs.filter((blog) => {
+      if (toShow !== "All") {
+        return blog.type.toLowerCase() === toShow.toLowerCase();
       }
-      return blog.type.toLowerCase() === toShow.toLowerCase();
+      return blog;
     });
     setFilterdBlogs(newBlog);
   };
@@ -86,6 +88,7 @@ export default function Home(props) {
         </ul>
       </div>
       <ul className="home-blogs">
+        {console.log(filterdBlogs)}
         {filterdBlogs.map((blog) => {
           return (
             <li className="home-blogs-item" key={blog.id}>
@@ -100,10 +103,3 @@ export default function Home(props) {
     </div>
   );
 }
-
-export const blogLoader = async () => {
-  const response = await fetch(
-    "https://blog-post-f49f3-default-rtdb.firebaseio.com/blogs.json"
-  );
-  return response.json();
-};

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./post.css";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
-export default function Post() {
-  const blogs = useLoaderData();
+export default function Post(props) {
+  const blogs = props.blogs;
   const [blog, setBlog] = useState({
     id: Math.random(),
     type: "",
