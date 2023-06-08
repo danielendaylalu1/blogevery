@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "./home.css";
+import React from "react";
+import { useState, useEffect } from "react";
 import "./blogs.css";
-import { Link } from "react-router-dom";
-// import { useLoaderData } from "react-router-dom";
 
-export default function Home(props) {
+export default function Blogs(props) {
   const [filterdBlogs, setFilterdBlogs] = useState(props.blogs);
   useEffect(() => {
     setFilterdBlogs(props.blogs);
@@ -20,28 +18,7 @@ export default function Home(props) {
     setFilterdBlogs(newBlog);
   };
   return (
-    <div className="home">
-      <div className="home-header">
-        <div className="home-header-text">
-          <h1 className="home-header-large">Blog~every</h1>
-          <h2 className="home-header-md">
-            Wellcome to blog~every enjoy! our blogs.
-          </h2>
-        </div>
-        <p className="home-discription">
-          is simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. dummy text of
-          the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and scrambled it to make a type specimen
-          book. is simply dummy text of the printing and typesetting industry.
-        </p>
-      </div>
+    <div>
       <h1 className="home-blog-header">Blogs</h1>
       <div className="blogs-filter">
         <ul className="filter-items">
@@ -96,9 +73,7 @@ export default function Home(props) {
             <li className="home-blogs-item" key={blog.id}>
               <h3 className="type">{blog.type}</h3>
               <h2 className="title">{blog.title}</h2>
-              <p className="content">
-                {blog.blog.substring(0, 200)}. <Link to="blogs">Read more</Link>
-              </p>
+              <p className="content">{blog.blog}</p>
               <h4 className="date">{blog.date}</h4>
             </li>
           );

@@ -13,6 +13,9 @@ export default function NavBar() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className="navlink">
+          <NavLink to="blogs">blogs</NavLink>
+        </li>
+        <li className="navlink">
           <NavLink to="post">post blog</NavLink>
         </li>
         <li className="navlink">

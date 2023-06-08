@@ -11,6 +11,7 @@ import NavBar from "./component/NavBar";
 import Post from "./pages/Post";
 import Help from "./pages/Help";
 import { useEffect, useState } from "react";
+import Blogs from "./pages/Blogs";
 
 function App() {
   const [data, setData] = useState([]);
@@ -28,6 +29,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<NavBar />}>
         <Route index element={<Home blogs={data} />} />
+        <Route path="blogs" element={<Blogs blogs={data} />} />
         <Route path="post" element={<Post blogs={data} />} />
         <Route path="about" element={<About />} />
         <Route path="help" element={<Help />} />
