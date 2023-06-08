@@ -10,8 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: flex-start; */
-  width: 70%;
+  width: 80%;
   margin: 2rem auto;
 }
 .form-label {
@@ -20,21 +19,38 @@
 }
 .form input {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.5rem 1.5rem;
   width: 80%;
 }
 .form textarea {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.5rem 1.5rem;
   width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 .form input[type="date"] {
   margin-top: 1rem;
   font-size: 1rem;
   padding: 0.2rem 1rem;
   width: 30%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.form select {
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  width: 30%;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+.form select:focus {
+  outline: none;
+}
+.form select option {
+  font-size: 0.9rem;
 }
 .form button {
   cursor: pointer;

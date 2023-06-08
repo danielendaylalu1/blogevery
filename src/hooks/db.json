@@ -1,0 +1,25 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "type": "News",
+      "title": "Possible charges loom for Donald Trump over classified documents",
+      "blog": "A move by federal prosecutors to notify the ex-president of a criminal probe suggests he could soon faces charges. If that happened it would be the second indictment of Mr Trump, who is campaigning once again to be president. Prosecutors have been looking into the transfer of files to Mr Trump's Mar-a-Lago Florida estate since last year.The beachside property was searched last August and 11,000 documents were seized, including around 100 marked as classified. Some of these were labelled top secret.In an interview on Wednesday, Mr Trump denied he had been told he faces an indictment over his handling of the documents.",
+      "date": "Mon Jun 08 2023"
+    },
+    {
+      "id": 2,
+      "type": "Tech",
+      "title": "Mind how you use brain data, privacy watchdog warns",
+      "blog": "Companies in the future may use brain-monitoring technology to watch or hire workers, the data watchdog says.But there is a real danger of discrimination if the technology is not developed and used properly, the Information Commissioner's Office says.Tech Futures: Neurotechnology is the first ICO report on 'neurodata', data from the brain and nervous system.It comes as companies such as Elon Musk's Neuralink explore new ways to let computers connect to human brains.",
+      "date": "Thu May 02 2023"
+    },
+    {
+      "id": 3,
+      "type": "business",
+      "title": "Why Singapore is the only place in the world selling lab-grown meat",
+      "blog": "You would never guess that the piece of meat in front of me did not come from a farm. It was made in a laboratory on an industrial estate just a few miles down the road.I'm in Huber's Butchery and Bistro in Singapore, which is the only restaurant in world to have so-called cultivated meat on the menu.Feedback from customers has been 'phenomenal', according to the restaurant's owner.The meat's creator - California-based Eat Just - says it is ethical, clean and green - with no compromise on taste. Billions of dollars are being poured into the industry, but huge question marks hang over its viability as anything beyond a novelty.",
+      "date": "Wed Mar 14 2023"
+    }
+  ]
+}

@@ -1,4 +1,10 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 100;
+  background-color: #ffff;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -13,4 +19,7 @@
 .navlink a {
   color: #0c0c0c;
   text-decoration: none;
+}
+.navlink a.active {
+  border-bottom: 2px solid #000;
 }
