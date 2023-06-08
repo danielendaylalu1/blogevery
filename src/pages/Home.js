@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import { useLoaderData } from "react-router-dom";
 
-export default function Home() {
+export default function Home(props) {
   const blogs = useLoaderData();
-  console.log(blogs);
+  const [filterdBlogs, setFilterdBlogs] = useState(blogs);
+  const filterHandler = (toShow) => {
+    setFilterdBlogs(blogs);
+    const newBlog = blogs.filter((blog) => {
+      if (toShow === "All") {
+        return blog;
+      }
+      return blog.type.toLowerCase() === toShow.toLowerCase();
+    });
+    setFilterdBlogs(newBlog);
+  };
   return (
     <div className="home">
       <div className="home-header">
@@ -29,8 +39,54 @@ export default function Home() {
         </p>
       </div>
       <h1 className="home-blog-header">Blogs</h1>
+      <div className="blogs-filter">
+        <ul className="filter-items">
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            All
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            News
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            Forex
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            Ai
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            politics
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            Tech
+          </li>
+          <li
+            className="filter-item"
+            onClick={(e) => filterHandler(e.target.innerHTML)}
+          >
+            Business
+          </li>
+        </ul>
+      </div>
       <ul className="home-blogs">
-        {blogs.map((blog) => {
+        {filterdBlogs.map((blog) => {
           return (
             <li className="home-blogs-item" key={blog.id}>
               <h3 className="type">{blog.type}</h3>

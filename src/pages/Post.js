@@ -12,7 +12,7 @@ export default function Post() {
     date: new Date().toDateString(),
   });
 
-  const blogPostHandler = async (data) => {
+  const blogPostHandler = async () => {
     const response = fetch(
       "https://blog-post-f49f3-default-rtdb.firebaseio.com/blogs.json",
       {
@@ -35,6 +35,13 @@ export default function Post() {
           console.log(blog);
           blogs.push(blog);
           blogPostHandler(blog);
+          setBlog({
+            id: Math.random(),
+            type: "",
+            title: "",
+            blog: "",
+            date: new Date().toDateString(),
+          });
         }}
       >
         <label htmlFor="cars" className="form-label">

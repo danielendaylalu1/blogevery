@@ -1,3 +1,1 @@
-export default function userValidator() {
-  //   return <div>userValidator</div>;
-}
+export default function userValidator(validator) {}
