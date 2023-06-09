@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./post.css";
-// import { useLoaderData } from "react-router-dom";
+// import useInput from "../hooks/index";
 
 export default function Post(props) {
   const blogs = props.blogs;
@@ -66,6 +66,7 @@ export default function Post(props) {
         <label htmlFor="title" className="form-label">
           title:
         </label>
+        {/* {console.log(isTouched, isValid)} */}
         <input
           id="title"
           placeholder="title"
@@ -76,6 +77,7 @@ export default function Post(props) {
             const newTitle = e.target.value;
             setBlog((prevVal) => ({ ...prevVal, title: newTitle }));
           }}
+          // onBlur={() => titleBlurHandler}
         />
         <label htmlFor="blog" className="form-label">
           blog:

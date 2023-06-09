@@ -1,8 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./blogs.css";
+import FilterLinks from "../component/FilterLinks";
 
 export default function Blogs(props) {
+  const filterLinks = [
+    "All",
+    "News",
+    "Forex",
+    "Ai",
+    "Politics",
+    "Tech",
+    "Business",
+  ];
   const [filterdBlogs, setFilterdBlogs] = useState(props.blogs);
   useEffect(() => {
     setFilterdBlogs(props.blogs);
@@ -20,52 +30,7 @@ export default function Blogs(props) {
   return (
     <div>
       <h1 className="home-blog-header">Blogs</h1>
-      <div className="blogs-filter">
-        <ul className="filter-items">
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            All
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            News
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            Forex
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            Ai
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            politics
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            Tech
-          </li>
-          <li
-            className="filter-item"
-            onClick={(e) => filterHandler(e.target.innerHTML)}
-          >
-            Business
-          </li>
-        </ul>
-      </div>
+      <FilterLinks filterHandler={filterHandler} filterLinks={filterLinks} />
       <ul className="home-blogs">
         {console.log(filterdBlogs)}
         {filterdBlogs.map((blog) => {

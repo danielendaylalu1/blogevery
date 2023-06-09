@@ -2,29 +2,3 @@
   padding: 1.5rem 2.5rem;
   text-align: center;
 }
-.home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 1.5rem 2.5rem;
-  width: 80%;
-  margin: 1rem auto;
-}
-.home-header-text {
-  margin-right: 2rem;
-  /* margin-bottom: 1rem; */
-  margin: 1rem auto;
-}
-.home-header-large {
-  font-size: 3.5rem;
-}
-.home-header-md {
-  opacity: 0.6;
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
-.home-discription {
-  text-align: left;
-  margin-left: 2rem;
-}
