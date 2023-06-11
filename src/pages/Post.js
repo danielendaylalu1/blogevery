@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./post.css";
-// import useInput from "../hooks/index";
+import useInput from "../hooks/index";
 
 export default function Post(props) {
   const blogs = props.blogs;
@@ -11,6 +11,24 @@ export default function Post(props) {
     blog: "",
     date: new Date().toDateString(),
   });
+  const {
+    value: titleValue,
+    isValid: titleIsValid,
+    isInvalid: titleIsInvalid,
+    changeHandler: titleChangeHandler,
+    blurHandler: titleBlurHandler,
+    reset: titleReset,
+  } = useInput((val) => val.length > 6);
+  const {
+    value: blogValue,
+    isValid: blogIsValid,
+    isInvalid: blogIsInvalid,
+    changeHandler: blogChangeHandler,
+    blurHandler: blogBlurHandler,
+    reset: blogReset,
+  } = useInput((val) => val.length > 200);
+
+  const formIsValid = blogIsValid && titleIsValid;
 
   const blogPostHandler = async () => {
     const response = fetch(
@@ -42,6 +60,8 @@ export default function Post(props) {
             blog: "",
             date: new Date().toDateString(),
           });
+          titleReset();
+          blogReset();
         }}
       >
         <label htmlFor="cars" className="form-label">
@@ -66,7 +86,9 @@ export default function Post(props) {
         <label htmlFor="title" className="form-label">
           title:
         </label>
-        {/* {console.log(isTouched, isValid)} */}
+        {titleIsInvalid && (
+          <p className="error-text">title must not be empty</p>
+        )}
         <input
           id="title"
           placeholder="title"
@@ -76,12 +98,21 @@ export default function Post(props) {
           onChange={(e) => {
             const newTitle = e.target.value;
             setBlog((prevVal) => ({ ...prevVal, title: newTitle }));
+            titleChangeHandler(newTitle);
           }}
-          // onBlur={() => titleBlurHandler}
+          onBlur={() => {
+            titleBlurHandler();
+          }}
         />
         <label htmlFor="blog" className="form-label">
           blog:
         </label>
+        {/* {console.log(blogValue, blogIsValid, blogIsInvalid)} */}
+        {blogIsInvalid && (
+          <p className="error-text">
+            blog must be > 200 char {`${blogValue.length}/ 200`}{" "}
+          </p>
+        )}
         <textarea
           placeholder="blog.."
           rows="6"
@@ -91,9 +122,15 @@ export default function Post(props) {
           onChange={(e) => {
             const newBlog = e.target.value;
             setBlog((prevVal) => ({ ...prevVal, blog: newBlog }));
+            blogChangeHandler(newBlog);
+          }}
+          onBlur={() => {
+            blogBlurHandler();
           }}
         />
-        <button type="submit">Post</button>
+        <button type="submit" disabled={!formIsValid}>
+          Post
+        </button>
       </form>
     </div>
   );

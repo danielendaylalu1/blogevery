@@ -7,8 +7,8 @@ const useInput = (validate) => {
   const isValid = validate(value);
   const isInvalid = !isValid && isTouched;
 
-  const changeHandler = (e) => {
-    setValue(e.target.value);
+  const changeHandler = (val) => {
+    setValue(val);
   };
   const blurHandler = () => {
     setIsTouched(true);

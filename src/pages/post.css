@@ -62,3 +62,12 @@
   color: #ffff;
   width: 80%;
 }
+.error-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #b31312;
+}
+.form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
