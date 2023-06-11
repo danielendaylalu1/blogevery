@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchHandler = async () => {
       const response = await fetch(
-        "https://blog-post-f49f3-default-rtdb.firebaseio.com/blogs.json"
+        ""
       );
       const newdata = await response.json();
       setData(newdata);
